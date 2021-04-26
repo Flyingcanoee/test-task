@@ -1,0 +1,298 @@
+@import 'fonts.scss';
+
+$link-light: #f1f1f1;
+$link-dark: rgb(168, 167, 167);
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@media (min-width: 1024px) and (max-resolution: 1dppx) {
+	body {
+		overflow: hidden;
+		height: 100%;
+	}
+}
+@media (pointer: none) and (pointer: coarse) {
+    body {
+        overflow: auto;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: calc(100% - 140px);
+    margin: 0 70px;
+}
+
+.burger-menu {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .burger-menu {
+        display: block;
+        width: 80px;
+        height: 20px;
+        position: fixed;
+        color: $link-light;
+        font-family: 'PT Sans';
+        font-weight: bold;
+        top: 30px;
+        left: 15px;
+        z-index: 50;
+        cursor: pointer;
+    }
+}
+
+nav {
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    z-index: 49;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        border-bottom: 1px solid $link-light;
+        
+
+        @media (max-width: 767px) {
+
+            background-color: rgba(53, 52, 52, 0.6);
+            backdrop-filter: blur(5px);
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            flex-flow: column;
+            align-items: flex-start;
+            width: 200px;
+            height: 100%;
+            padding-left: 15px;
+            margin: 0;
+            display: flex;
+            transition: left 1s;
+            left: -250px;
+
+
+            &.active {
+                background-color: rgba(53, 52, 52, 0.6);
+                backdrop-filter: blur(5px);
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                flex-flow: column;
+                align-items: flex-start;
+                width: 200px;
+                height: 100%;
+                padding-left: 15px;
+                margin: 0;
+                display: flex;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: $link-light;
+            margin-right: 55px;
+            font-family: 'PT Sans';
+
+            @media (max-width: 767px) {
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+
+            &:last-child {
+                margin-right: 0;
+
+            }
+
+            &:hover {
+                color: rgb(155, 152, 155);
+            }
+        }
+    }
+}
+
+.title-section {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/Background.png');
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+
+    .container {
+        position: relative;
+        height: 100%;
+
+    }
+}
+
+.scroll {
+    text-align: center;
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+
+    &.dark-scroll {
+        bottom: 10px;
+    }
+    &.dark-scroll {
+        @media (max-width: 768px) {
+            position: relative;
+            margin-top: 100px;
+        }
+    }
+
+    &.dark-scroll p {
+        color: $link-dark;
+    }
+
+    p {
+        color: $link-light;
+        font-family: 'Open Sans';
+        padding-bottom: 20px;
+        font-size: 15px;
+    }
+
+    img {
+        width: 20px;
+    }
+}
+
+.about-section {
+    height: 100vh;
+    position: relative;
+
+    .about-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+
+        @media (max-width: 768px) {
+            flex-flow: column;
+            height: auto;
+        }
+
+        .photo {
+            width: 400px;
+            height: 400px;
+            background-image: url(../img/Jason-Wood.png);
+            background-position: 50% 50%;
+            background-size: cover;
+
+            @media (max-width: 768px) {
+                width: 100%;
+                height: 800px;
+
+            }
+        }
+
+        .personal-info {
+            margin: 20px 50px 0 50px;
+            width: 40%;
+
+
+            @media (max-width: 768px) {
+                width: calc(100% - 100px);
+                padding: 50px 50px 0 50px;
+            }
+
+            h1 {
+                font-family: 'Open Sans';
+                font-weight: 400;
+                margin-bottom: 40px;
+                color: rgb(97, 96, 96);
+            }
+
+            p {
+                font-family: 'Open Sans';
+                font-weight: 300;
+                margin-bottom: 25px;
+                font-size: 15px;
+                color: rgb(97, 96, 96);
+            }
+
+            h2 {
+                font-family: 'Open Sans';
+                font-weight: 400;
+                padding-top: 15px;
+                font-size: 20px;
+                color: rgb(97, 96, 96);
+            }
+
+        }
+    }
+}
+
+.lock {
+    overflow: hidden;
+}
+
+.portfolio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+    @media (max-width: 1200px) {
+        flex-direction: column;
+    }
+    .project{
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 50px 50px;
+        
+        @media (max-width: 1200px) {
+            margin: 20px 50px;
+        }
+
+        .img{
+            width: 350px;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            
+            @media (max-width: 1200px) {
+                width: 80vw;
+            }
+                &.img1{
+                    background-image: url(../img/Photo-1.webp);
+                }
+                &.img2{
+                    background-image: url(../img/Photo-2.jpg);
+                }
+                &.img3{
+                    background-image: url(../img/Photo-3.jpg);
+                }
+        }
+
+        .project-text{
+            margin-top: 3vw;
+            font-size: 25px;
+            font-family: 'PT Sans';
+            color: rgb(97, 96, 96);
+            cursor: pointer;
+            transition: color 1s ease;
+
+            &:hover{
+                color: rgb(253, 163, 163);
+            }
+        }
+    }
+}
